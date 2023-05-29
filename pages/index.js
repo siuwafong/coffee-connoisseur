@@ -1,14 +1,14 @@
 // import Head from 'next/head'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Banner from '../components/banner'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import Banner from "../components/banner";
+import Link from "next/link";
 
 export default function Home() {
-
   const handleOnBannerBtnClick = () => {
-    console.log('hi banner button')
-  }
+    console.log("hi banner button");
+  };
 
   return (
     <div className={styles.container}>
@@ -19,12 +19,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Banner buttonText='View stores nearby' handleOnClick={handleOnBannerBtnClick}/>
+        <Banner
+          buttonText="View stores nearby"
+          handleOnClick={handleOnBannerBtnClick}
+        />
+        <Image
+          src="/static/drink-coffee.png"
+          width={300}
+          height={300}
+          quality={100}
+        />
       </main>
 
       <footer className={styles.footer}>
-
+        <Link href="/nextjs">
+          <a>Go to Ankita's page</a>
+        </Link>
       </footer>
     </div>
-  )
+  );
 }
